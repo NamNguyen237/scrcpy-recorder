@@ -1,0 +1,10 @@
+# Giữ nguyên định dạng gốc cho tất cả các file
+* text=auto
+
+# Ép các file script luôn là LF (để chạy được trên Linux Mint)
+*.sh text eol=lf
+*.py text eol=lf
+
+# Ép các file batch luôn là CRLF (dành cho Windows)
+*.bat text eol=crlf
+*.cmd text eol=crlf
