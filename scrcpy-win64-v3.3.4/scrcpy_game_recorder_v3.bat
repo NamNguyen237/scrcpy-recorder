@@ -80,8 +80,19 @@ echo [1] Chi xem  ^|  [2] Quay phim
 set /p "mode=Lua chon (1/2): "
 
 :: --- LENH SCRCPY NATIVE ---
-set "CMD_ARGS=--new-display=%new_res% --start-app=+%target_pkg% --video-buffer=0 --video-bit-rate %v_br% --turn-screen-off --stay-awake"
+echo ------------------------------------------------------
+echo [1] Keyboard Ao  ^|  [2] Keyboard That
+set /p "keyboard=Lua chon (1/2): "
+if "%keyboard%"=="2" goto :real_keyboard
+goto :virt_keyboard
 
+:real_keyboard
+set "CMD_ARGS=--new-display=%new_res% --start-app=+%target_pkg% --video-buffer=0 --video-bit-rate %v_br% --turn-screen-off --stay-awake --keyboard=uhid"
+if "%mode%"=="2" goto :run_record
+goto :run_view
+
+:virt_keyboard
+set "CMD_ARGS=--new-display=%new_res% --start-app=+%target_pkg% --video-buffer=0 --video-bit-rate %v_br% --turn-screen-off --stay-awake"
 if "%mode%"=="2" goto :run_record
 goto :run_view
 
