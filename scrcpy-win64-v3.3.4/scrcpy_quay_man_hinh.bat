@@ -42,7 +42,7 @@ set /p choice="Nhap lua chon (1/2) roi Bam ENTER: "
 
 :: Thiết lập đường dẫn lưu file (Windows dùng đường dẫn như C:\... hoặc D:\...)
 :: Mình để mặc định là ổ D:\RAW_Recorded, bạn có thể sửa lại cho đúng ý
-set "SAVE_DIR=D:\RAW_Recorded"
+set "SAVE_DIR=C:\RAW_Recorded"
 if not exist "%SAVE_DIR%" mkdir "%SAVE_DIR%"
 
 :: Tạo timestamp cho tên file (YYYYMMDD_HHMMSS)
